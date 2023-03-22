@@ -1,0 +1,10 @@
+C:\CoreSource\RedisService\bin\Release\netcoreapp3.1\RedisService.deps.json
+C:\CoreSource\RedisService\bin\Release\netcoreapp3.1\RedisService.dll
+C:\CoreSource\RedisService\bin\Release\netcoreapp3.1\RedisService.pdb
+C:\CoreSource\RedisService\obj\Release\netcoreapp3.1\RedisService.csproj.AssemblyReference.cache
+C:\CoreSource\RedisService\obj\Release\netcoreapp3.1\RedisService.GeneratedMSBuildEditorConfig.editorconfig
+C:\CoreSource\RedisService\obj\Release\netcoreapp3.1\RedisService.AssemblyInfoInputs.cache
+C:\CoreSource\RedisService\obj\Release\netcoreapp3.1\RedisService.AssemblyInfo.cs
+C:\CoreSource\RedisService\obj\Release\netcoreapp3.1\RedisService.csproj.CoreCompileInputs.cache
+C:\CoreSource\RedisService\obj\Release\netcoreapp3.1\RedisService.dll
+C:\CoreSource\RedisService\obj\Release\netcoreapp3.1\RedisService.pdb

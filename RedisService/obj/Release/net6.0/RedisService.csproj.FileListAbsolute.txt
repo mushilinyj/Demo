@@ -1,0 +1,12 @@
+C:\CoreSource\RedisService\bin\Release\net6.0\RedisService.deps.json
+C:\CoreSource\RedisService\bin\Release\net6.0\RedisService.dll
+C:\CoreSource\RedisService\bin\Release\net6.0\RedisService.pdb
+C:\CoreSource\RedisService\obj\Release\net6.0\RedisService.csproj.AssemblyReference.cache
+C:\CoreSource\RedisService\obj\Release\net6.0\RedisService.GeneratedMSBuildEditorConfig.editorconfig
+C:\CoreSource\RedisService\obj\Release\net6.0\RedisService.AssemblyInfoInputs.cache
+C:\CoreSource\RedisService\obj\Release\net6.0\RedisService.AssemblyInfo.cs
+C:\CoreSource\RedisService\obj\Release\net6.0\RedisService.csproj.CoreCompileInputs.cache
+C:\CoreSource\RedisService\obj\Release\net6.0\RedisService.dll
+C:\CoreSource\RedisService\obj\Release\net6.0\refint\RedisService.dll
+C:\CoreSource\RedisService\obj\Release\net6.0\RedisService.pdb
+C:\CoreSource\RedisService\obj\Release\net6.0\ref\RedisService.dll

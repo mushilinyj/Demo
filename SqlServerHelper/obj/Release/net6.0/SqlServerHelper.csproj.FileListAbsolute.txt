@@ -1,0 +1,14 @@
+C:\CoreSource\SqlServerHelper\bin\Release\net6.0\SqlServerHelper.deps.json
+C:\CoreSource\SqlServerHelper\bin\Release\net6.0\SqlServerHelper.runtimeconfig.json
+C:\CoreSource\SqlServerHelper\bin\Release\net6.0\SqlServerHelper.dll
+C:\CoreSource\SqlServerHelper\bin\Release\net6.0\SqlServerHelper.pdb
+C:\CoreSource\SqlServerHelper\obj\Release\net6.0\SqlServerHelper.csproj.AssemblyReference.cache
+C:\CoreSource\SqlServerHelper\obj\Release\net6.0\SqlServerHelper.GeneratedMSBuildEditorConfig.editorconfig
+C:\CoreSource\SqlServerHelper\obj\Release\net6.0\SqlServerHelper.AssemblyInfoInputs.cache
+C:\CoreSource\SqlServerHelper\obj\Release\net6.0\SqlServerHelper.AssemblyInfo.cs
+C:\CoreSource\SqlServerHelper\obj\Release\net6.0\SqlServerHelper.csproj.CoreCompileInputs.cache
+C:\CoreSource\SqlServerHelper\obj\Release\net6.0\SqlServerHelper.dll
+C:\CoreSource\SqlServerHelper\obj\Release\net6.0\refint\SqlServerHelper.dll
+C:\CoreSource\SqlServerHelper\obj\Release\net6.0\SqlServerHelper.pdb
+C:\CoreSource\SqlServerHelper\obj\Release\net6.0\SqlServerHelper.genruntimeconfig.cache
+C:\CoreSource\SqlServerHelper\obj\Release\net6.0\ref\SqlServerHelper.dll

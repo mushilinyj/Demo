@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoCore", "DemoCore.csproj", "{6A94477F-0A1D-482D-B0FC-60E88D802D04}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedisService", "..\RedisService\RedisService.csproj", "{ABC96A2F-0DF8-43A2-83F0-C7907A038D50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlServerHelper", "..\SqlServerHelper\SqlServerHelper.csproj", "{A6E0674D-853E-48A9-88A5-3A34B6E26248}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A94477F-0A1D-482D-B0FC-60E88D802D04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A94477F-0A1D-482D-B0FC-60E88D802D04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A94477F-0A1D-482D-B0FC-60E88D802D04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A94477F-0A1D-482D-B0FC-60E88D802D04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABC96A2F-0DF8-43A2-83F0-C7907A038D50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABC96A2F-0DF8-43A2-83F0-C7907A038D50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABC96A2F-0DF8-43A2-83F0-C7907A038D50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABC96A2F-0DF8-43A2-83F0-C7907A038D50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6E0674D-853E-48A9-88A5-3A34B6E26248}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6E0674D-853E-48A9-88A5-3A34B6E26248}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6E0674D-853E-48A9-88A5-3A34B6E26248}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6E0674D-853E-48A9-88A5-3A34B6E26248}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {857D3360-6227-4E54-9E1A-632EEA78A2C6}
+	EndGlobalSection
+EndGlobal
