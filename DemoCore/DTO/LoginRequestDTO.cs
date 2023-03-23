@@ -8,7 +8,7 @@ namespace DemoCore.DTO
         [Required]
         [JsonProperty("name")]
         public string Name { get; set; }
-        [Required]
+        [Required(ErrorMessage ="密码必填")]
         [JsonProperty("passWord")]
         public string PassWord { get; set; }
     }

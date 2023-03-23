@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using RedisService.Model;
 using StackExchange.Redis;
 using System;
 using System.Collections.Concurrent;
@@ -33,11 +34,11 @@ namespace RedisService.Service
                 return _instance.Value;
             }
         }
-        public RedisHelper Init(string connectionString, string instanceName, int defaultDB = 0)
+        public RedisHelper Init(RedisSettingModel settingModel)
         {
-            _connectionString = connectionString;
-            _instanceName = instanceName;
-            _defaultDB = defaultDB;
+            _connectionString = settingModel.Connection;
+            _instanceName = settingModel.InstanceName;
+            _defaultDB = settingModel.DefaultDB;
             _connections = new ConcurrentDictionary<string, ConnectionMultiplexer>();
             _connection = _connections.GetOrAdd(_instanceName, p => ConnectionMultiplexer.Connect(_connectionString));
             _db = _connection.GetDatabase(_defaultDB);

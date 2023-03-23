@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "E:\\CoreSource\\Demo\\RedisService\\RedisService.csproj": {}
+    "C:\\CoreSource\\Demo\\RedisService\\RedisService.csproj": {}
   },
   "projects": {
-    "E:\\CoreSource\\Demo\\RedisService\\RedisService.csproj": {
+    "C:\\CoreSource\\Demo\\RedisService\\RedisService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\CoreSource\\Demo\\RedisService\\RedisService.csproj",
+        "projectUniqueName": "C:\\CoreSource\\Demo\\RedisService\\RedisService.csproj",
         "projectName": "RedisService",
-        "projectPath": "E:\\CoreSource\\Demo\\RedisService\\RedisService.csproj",
-        "packagesPath": "D:\\Work\\VS2022Source",
-        "outputPath": "E:\\CoreSource\\Demo\\RedisService\\obj\\",
+        "projectPath": "C:\\CoreSource\\Demo\\RedisService\\RedisService.csproj",
+        "packagesPath": "C:\\Users\\shilin\\.nuget\\packages\\",
+        "outputPath": "C:\\CoreSource\\Demo\\RedisService\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\shilin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,8 +59,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -65,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "E:\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

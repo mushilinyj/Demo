@@ -178,7 +178,10 @@ public partial class MedioContext : DbContext
     public virtual DbSet<VirtualName> VirtualNames { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Data Source=192.168.1.3:2433;Initial Catalog=MedioLabs;Persist Security Info=True;TrustServerCertificate=true;User ID=sa;Password=OTR123!");
+    {
+        var conn = SettingsHelper.GetSectionValue("WorkMedioLabs");
+        optionsBuilder.UseSqlServer(conn);
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

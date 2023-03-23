@@ -22,3 +22,15 @@ E:\CoreSource\RedisService\obj\Debug\net6.0\RedisService.dll
 E:\CoreSource\RedisService\obj\Debug\net6.0\refint\RedisService.dll
 E:\CoreSource\RedisService\obj\Debug\net6.0\RedisService.pdb
 E:\CoreSource\RedisService\obj\Debug\net6.0\ref\RedisService.dll
+C:\CoreSource\Demo\RedisService\bin\Debug\net6.0\RedisService.deps.json
+C:\CoreSource\Demo\RedisService\bin\Debug\net6.0\RedisService.dll
+C:\CoreSource\Demo\RedisService\bin\Debug\net6.0\RedisService.pdb
+C:\CoreSource\Demo\RedisService\obj\Debug\net6.0\RedisService.csproj.AssemblyReference.cache
+C:\CoreSource\Demo\RedisService\obj\Debug\net6.0\RedisService.GeneratedMSBuildEditorConfig.editorconfig
+C:\CoreSource\Demo\RedisService\obj\Debug\net6.0\RedisService.AssemblyInfoInputs.cache
+C:\CoreSource\Demo\RedisService\obj\Debug\net6.0\RedisService.AssemblyInfo.cs
+C:\CoreSource\Demo\RedisService\obj\Debug\net6.0\RedisService.csproj.CoreCompileInputs.cache
+C:\CoreSource\Demo\RedisService\obj\Debug\net6.0\RedisService.dll
+C:\CoreSource\Demo\RedisService\obj\Debug\net6.0\refint\RedisService.dll
+C:\CoreSource\Demo\RedisService\obj\Debug\net6.0\RedisService.pdb
+C:\CoreSource\Demo\RedisService\obj\Debug\net6.0\ref\RedisService.dll

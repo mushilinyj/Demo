@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using DemoCore.AutoModule;
 using DemoCore.CookieHelper;
+using DemoCore.Helper;
 using DemoCore.IServiceHelper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -14,6 +15,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using RedisService.Model;
 using RedisService.Service;
 using System;
 using System.Collections.Generic;
@@ -119,15 +121,11 @@ namespace DemoCore
         public void ConfigureContainer(ContainerBuilder builder)
         {
             //redis缓存
-            var section = Configuration.GetSection("Redis:Default");
-            //连接字符串
-            string _connectionString = section.GetSection("Connection").Value;
-            //实例名称
-            string _instanceName = section.GetSection("InstanceName").Value;
-            //默认数据库 
-            int _defaultDB = int.Parse(section.GetSection("DefaultDB").Value ?? "0");
+            var section = Configuration.GetSection("Redis:Work").Get<RedisSettingModel>();// DeserializeHelper.DeserializeObject<RedisSettingModel>(Configuration.GetSection("Redis:Default").Value);
            
-            //RedisHelper.Instance.Init(_connectionString, _instanceName, _defaultDB);
+            //var section = DeserializeHelper.DeserializeObject<RedisSettingModel>(section);
+           
+            RedisHelper.Instance.Init(section);
             builder.RegisterModule(new AutofacModule());
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
