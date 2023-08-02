@@ -17,7 +17,6 @@ namespace DemoCore.AutoModule
             builder.RegisterAssemblyTypes(typeof(Program).Assembly)
                 .Where(t => controllerBaseType.IsAssignableFrom(t) && t != controllerBaseType)
                 .PropertiesAutowired(new AutowiredPropertySelector());
-            
         }
         /// <summary>
         /// 属性注入选择器

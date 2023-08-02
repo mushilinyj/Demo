@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using DemoCore.AuthorizationHelper;
 using DemoCore.AutoModule;
 using DemoCore.CookieHelper;
 using DemoCore.Helper;
@@ -10,11 +11,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Cors;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using RedisService.Model;
 using RedisService.Service;
 using System;
@@ -42,7 +45,8 @@ namespace DemoCore
               option.AddPolicy("CorsPolicy",
               builder => builder.AllowAnyOrigin()
                   .AllowAnyMethod()
-                  .AllowAnyHeader());
+                  .AllowAnyHeader()
+                  );
             });
             services.AddControllers().AddControllersAsServices();
             //services.AddRedisService(Configuration);
@@ -65,23 +69,62 @@ namespace DemoCore
             //});//接口授权服务
 
             //jwt接管权限验证
+            
             var jwt = Configuration.GetSection("Jwt").Get<JwtManagement>();
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-               .AddJwtBearer(options =>
-               {
-                   options.RequireHttpsMetadata = true;
-                   options.SaveToken = true;
-                   options.TokenValidationParameters = new TokenValidationParameters
-                   {
-                       ValidateIssuer = false,
-                       ValidateAudience = false,
-                       ValidateLifetime = true,
-                       ValidateIssuerSigningKey = true,
-                       ValidIssuer = jwt.Issuer,
-                       ValidAudience = jwt.Audience,
-                       IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwt.Secret))
-                   };
-               });
+            _ = services.AddAuthentication(options =>
+              {
+                  options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+              })
+            .AddJwtBearer(options =>
+            {
+                options.RequireHttpsMetadata = true;
+                options.SaveToken = true;
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = jwt.Issuer,
+                    ValidAudience = jwt.Audience,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwt.Secret))
+                };
+                options.SecurityTokenValidators.Clear();
+                options.SecurityTokenValidators.Add(new MyTokenValidator());//自定义验证规则
+                options.Events = new JwtBearerEvents()
+                {
+                    OnMessageReceived = context =>
+                    {
+                        var Token = context.Request.Headers.Authorization;
+                        if (Token.ToString().IndexOf("Bearer undefined") > -1 && context.Request.Path.Value.IndexOf("Login/Index") > -1)
+                            context.Request.Headers.Remove("Authorization");
+                        return Task.CompletedTask;
+                    },
+                    OnChallenge = context =>
+                    {
+                        //token验证失败后触发的事件
+                        context.HandleResponse();
+                        context.Response.ContentType = "application/json";
+                        context.Response.StatusCode = StatusCodes.Status200OK;
+                        context.Response.WriteAsJsonAsync(new APIReturn(401, false, "无权限"));
+                        return Task.FromResult(0);
+                    },
+                    OnAuthenticationFailed = context =>
+                    {
+                        // 如果过期，则把<是否过期>添加到，返回头信息中
+                        if (context.Exception.GetType() == typeof(SecurityTokenExpiredException))
+                        {
+                            context.Response.Headers.Add("Token-Expired", "true");
+                        }
+                        context.HttpContext.Response.StatusCode = StatusCodes.Status200OK;
+                        context.HttpContext.Response.ContentType = "application/json";
+                        context.HttpContext.Response.WriteAsJsonAsync(new APIReturn(402, false, "登录已过期"));
+                        context.Success();
+                        return Task.FromResult(0);
+                    },
+
+                };
+            });
             //services.AddAuthentication("cookie")
             //    .AddCookie("cookie")
             //    .AddOAuth("custom", o =>
@@ -112,10 +155,10 @@ namespace DemoCore
             // 注册为单例
             services.AddHttpContextAccessor();
             // 注册Cookie操作接口
-            services.AddSingleton<ICookieHelper, CookieHelper.CookieHelper>();
+            services.AddTransient<ICookieHelper, CookieHelper.CookieHelper>();
             //注入带参服务
-            services.AddSingleton<IAuthenticateService>(x => new AuthenticateService(jwt));
-          
+            services.AddTransient<IAuthenticateService>(x => new AuthenticateService(jwt));
+           
         }
 
         public void ConfigureContainer(ContainerBuilder builder)
@@ -143,7 +186,7 @@ namespace DemoCore
                 c.RoutePrefix = string.Empty;
             });
             app.UseRouting();
-            
+            app.UseOptionsRequst();//自定义中间件
             app.UseAuthentication();//权限认证服务
             app.UseAuthorization();//接口授权服务
             app.UseCors("CorsPolicy");

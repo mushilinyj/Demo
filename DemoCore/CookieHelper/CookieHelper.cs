@@ -56,7 +56,9 @@ namespace DemoCore.CookieHelper
             CookieOptions options = new()
             {
                 Expires = DateTime.Now.AddMinutes(expiresTime),
-                HttpOnly = true
+                HttpOnly = true,
+                SameSite = SameSiteMode.None,
+                Secure = true,
             };
             _httpContextAccessor.HttpContext.Response.Cookies.Append(key, value, options);
         }

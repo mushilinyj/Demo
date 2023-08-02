@@ -25,11 +25,11 @@ namespace DemoCore.Model
         public static List<(string title, string name,string path)> keyValuePairs = new List<(string title, string name, string path)>()
         {
                     ("系统首页","homeManager", "HomeManagerView"),
-                    ("随访测试","autoManager", "AutoManagerView"),
-                    ("病例管理","caseManager","CaseManagerView"),
-                    ("指标管理","indexManager", "IndexManagerView"),
-                    ("我的组","myGroup","MyGroupView"),
-                    ("关于我们","guanyumy","GuanyumyView")
+                    ("智能聊天","autoManager", "AutoManagerView"),
+                    ("人员管理","caseManager","CaseManagerView"),
+                    ("仓储管理","indexManager", "IndexManagerView"),
+                    ("我的配置","myGroup","MyGroupView"),
+                    ("关于","guanyumy","GuanyumyView")
         };
         public static List<MenuModel> GetDefaultMenus()
         {
