@@ -31,5 +31,11 @@ namespace DemoCore.Controllers
                 return new APIReturn(1, false, "获取登录唯一token失败");
             return new APIReturn(0, true, "", token);
         }
+        [HttpGet]
+        [AllowAnonymous]
+        public APIReturn SayHello()
+        {
+            return new APIReturn(0, true, "hello world");
+        }
     }
 }

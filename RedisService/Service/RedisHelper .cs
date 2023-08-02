@@ -24,7 +24,7 @@ namespace RedisService.Service
         {
         }
 
-        private static Lazy<RedisHelper> _instance = new Lazy<RedisHelper>(() =>
+        private static Lazy<RedisHelper> _instance = new(() =>
         {
             return new RedisHelper();
         });

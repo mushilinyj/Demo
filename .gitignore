@@ -1,0 +1,8 @@
+﻿################################################################################
+# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
+################################################################################
+
+/RedisService/bin/Release/net6.0/win-x64
+/RedisService/obj/Release/net6.0/win-x64
+/SqlServerHelper/bin/Release/net6.0/win-x64
+/SqlServerHelper/obj/Release/net6.0/win-x64
